@@ -5,7 +5,6 @@ dj_database_url==0.5.0
 blessings==1.7
 boto==2.49.0
 cached-property==1.5.2
-Cactus==3.3.3
 certifi==2020.12.5
 cffi==1.14.6
 chardet==4.0.0
