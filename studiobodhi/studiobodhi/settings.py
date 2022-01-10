@@ -29,7 +29,7 @@ INSTALLED_APPS = [
     'api',
     'rest_framework',
 
-# ]
+]
 
 # REST_FRAMEWORK = {
 #     'DEFAULT_AUTHENTICATION_CLASSES': [
