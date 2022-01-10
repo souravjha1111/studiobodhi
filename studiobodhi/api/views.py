@@ -43,7 +43,9 @@ def blogdata(request):
         serializer  = blogSerializer(data = request.data)
         if serializer.is_valid():
             serializer.save()
+            print(serializer.data)
             return Response(serializer.data)
+        
         else:
             return Response(serializer.errors)
 
