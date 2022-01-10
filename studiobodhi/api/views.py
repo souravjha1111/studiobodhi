@@ -7,10 +7,12 @@ from rest_framework.decorators import api_view
 from django.shortcuts import render
 from django.views.decorators.cache import never_cache
 from django.http import HttpResponse
+from django.views.decorators.csrf import csrf_exempt
 
 
 @api_view(['GET', 'POST'])
 @never_cache
+@csrf_exempt
 def get_post_pic(request):
     if request.method == 'GET':
         orders = urlModel.objects.all()
@@ -34,6 +36,7 @@ class deletephotourl(APIView):
 
 @api_view(['GET', 'POST'])
 @never_cache
+@csrf_exempt
 def blogdata(request):
     if request.method == 'GET':
         orders = blogMOdel.objects.all()
@@ -58,6 +61,7 @@ class deleteblogdata(APIView):
 ####################################################################3
 @api_view(['GET', 'POST'])
 @never_cache
+@csrf_exempt
 def contactsave(request):
     if request.method == 'GET':
         orders = contactModel.objects.all()
