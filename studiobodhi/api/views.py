@@ -8,7 +8,6 @@ from django.views.decorators.csrf import csrf_exempt
 
 
 @api_view(['GET', 'POST', 'DELETE'])
-@never_cache
 @csrf_exempt
 def get_post_pic(request, pk):
     if request.method == 'GET':
@@ -30,13 +29,14 @@ def get_post_pic(request, pk):
 
 
 @api_view(['GET', 'POST', 'DELETE'])
-@never_cache
 @csrf_exempt
 def blogdata(request, pk):
     if request.method == 'GET':
-        orders = blogMOdel.objects.all()
+        orders = blogMOdel.objects.values_list('id', 'title')
+        print(orders)
         serializer = blogSerializer(orders,many = True)
-        return Response(serializer.data)
+        # print(serializer.data)
+        return Response(orders)
     if request.method == 'POST':
         serializer  = blogSerializer(data = request.data)
         if serializer.is_valid():
@@ -52,7 +52,16 @@ def blogdata(request, pk):
 
 
 @api_view(['GET', 'POST', 'DELETE'])
-@never_cache
+@csrf_exempt
+def data(request, pk):
+    if request.method == 'GET':
+        orders = blogMOdel.objects.get(pk = pk)
+        serializer = blogSerializer(orders)
+        return Response(serializer.data)
+
+
+
+@api_view(['GET', 'POST', 'DELETE'])
 @csrf_exempt
 def contactsave(request, pk):
     if request.method == 'GET':
