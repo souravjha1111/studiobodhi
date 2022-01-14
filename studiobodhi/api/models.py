@@ -10,10 +10,11 @@ class urlModel(models.Model):
 
 class blogMOdel(models.Model):
     title = models.CharField(max_length = 500, null = True, blank = True)
+    blogphoto = models.URLField(max_length = 500, null = True, blank = True)
     content = models.CharField(max_length = 500000, null = True, blank = True)
     
     def __str__(self):
-        return str(self.title)
+        return str(self.id) +"-> " + str(self.title)
 
 class contactModel(models.Model):
     name = models.CharField(max_length = 50, null = True, blank = True)
@@ -22,5 +23,5 @@ class contactModel(models.Model):
     message = models.CharField(max_length = 5000, null = True, blank = True)
     
     def __str__(self):
-        return str(self.name)
+        return str(self.id) +"-> " + str(self.name)
 
