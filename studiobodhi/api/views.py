@@ -32,10 +32,8 @@ def get_post_pic(request, pk):
 @csrf_exempt
 def blogdata(request, pk):
     if request.method == 'GET':
-        orders = blogMOdel.objects.values_list('id', 'title')
-        print(orders)
+        orders = blogMOdel.objects.values_list('id', 'title','blogphoto')
         serializer = blogSerializer(orders,many = True)
-        # print(serializer.data)
         return Response(orders)
     if request.method == 'POST':
         serializer  = blogSerializer(data = request.data)
