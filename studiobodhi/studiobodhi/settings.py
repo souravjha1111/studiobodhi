@@ -95,7 +95,7 @@ DATABASES = {
             'ENFORCE_SCHEMA': False,
             'CLIENT': {
                 'host': 'mongodb+srv://sourav:sourav@cluster0.v86gb.mongodb.net/studiobodhi?retryWrites=true&w=majority'
-            }  
+             }  
         }
 }
 
