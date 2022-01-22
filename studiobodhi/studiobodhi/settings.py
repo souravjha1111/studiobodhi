@@ -94,7 +94,7 @@ DATABASES = {
             'NAME': 'studiobodhi',
             'ENFORCE_SCHEMA': False,
             'CLIENT': {
-                'host': 'mongodb+srv://admin:admin@cluster0.va9fe.mongodb.net/studiobodhi?retryWrites=true&w=majority'
+                'host': 'mongodb+srv://sourav:sourav@cluster0.v86gb.mongodb.net/studiobodhi?retryWrites=true&w=majority'
             }  
         }
 }
